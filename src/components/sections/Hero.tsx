@@ -65,7 +65,7 @@ export function Hero() {
               asChild
               className="bg-white text-black hover:bg-white/10 hover:text-white"
             >
-              <a href="/Ittehad_Bin_Rahim_Resume.pdf" download className="group" target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/file/d/1GTs3E_vQTAIDgpwFRdaR-wscd0Xifd3B/view?usp=sharing" className="group" target="_blank" rel="noopener noreferrer">
                 <span className="flex items-center justify-between gap-2"><span><File /></span> Resume </span>
               </a>
             </Button>
