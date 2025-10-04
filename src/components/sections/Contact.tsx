@@ -6,6 +6,19 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 export function Contact() {
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault()
+
+    // Simple mobile detection
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+
+    if (!isMobile) {
+      // Open Gmail in browser
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=ittehadbinrahim@gmail.com`
+      window.open(gmailUrl, "_blank")
+    }
+    
+  }
   const socials = [
     { icon: Github, label: "GitHub", href: "https://github.com/ittehad2001" },
     { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/ittehadbinrahim/" },
@@ -36,10 +49,14 @@ export function Contact() {
         <SectionReveal delay={0.2}>
           <div className="mb-16">
             <Button size="lg" asChild className="group relative overflow-hidden">
-              <a href="mailto:ittehadbinrahim@gmail.com" className="flex items-center gap-2">
+              <a 
+              href="mailto:ittehadbinrahim@gmail.com"
+               className="flex items-center gap-2"
+               onClick={handleClick}
+               >
                 <Mail className="w-5 h-5 transition-transform group-hover:scale-110" />
                 <span>Send me an email</span>
-               
+
               </a>
             </Button>
           </div>
@@ -48,8 +65,8 @@ export function Contact() {
         <SectionReveal delay={0.3}>
           <div className="flex justify-center gap-4 mb-16">
             {socials.map((social, index) => (
-              <div 
-                key={social.label} 
+              <div
+                key={social.label}
                 className="group relative"
                 style={{
                   animationDelay: `${index * 0.1}s`
@@ -57,7 +74,7 @@ export function Contact() {
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+
                 <Button
                   variant="outline"
                   size="icon"
@@ -74,7 +91,7 @@ export function Contact() {
                     <social.icon className="size-7 text-white/70 group-hover:text-white transition-colors duration-300" />
                   </a>
                 </Button>
-                
+
                 {/* Tooltip */}
                 <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-3 py-1.5 bg-black/90 backdrop-blur-md border border-white/20 rounded-lg text-xs text-white whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:-translate-y-1">
                   {social.label}
