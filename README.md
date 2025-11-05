@@ -1,4 +1,4 @@
-# Personal Portfolio
+# Ittehad Bin Rahim's Portfolio
 
 A modern, responsive personal portfolio website built with Next.js, showcasing professional experience, projects, and skills. Features smooth animations, interactive components, and a clean, professional design.
 
